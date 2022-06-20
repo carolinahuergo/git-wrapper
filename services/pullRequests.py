@@ -35,4 +35,4 @@ class PullRequestsService:
         g = Github(environ.get('GIT_USER_ACCESS_TOKEN'))
         repo = g.get_repo('carolinahuergo/git-wrapper')
         repo.get_pull(pull_request_number).merge()
-        self.dao.update(changes = {'status' : PullRequestStatus.MERGED})
+        self.dao.update(pull_request_number, changes = {'status' : PullRequestStatus.MERGED})

@@ -15,6 +15,8 @@ class PullRequestDAO:
         self.db.commit()
 
     def update(self, pull_request_number : int, changes : dict):
-        pull_request = PullRequest.query.filter_by(number = pull_request_number).first()
-        pull_request.update(changes)
+        pull_request = self.db.query(PullRequest).filter_by(number = pull_request_number).first()
+        for key in changes:
+            setattr(pull_request, key, changes[key])
+        self.db.add(pull_request)
         self.db.commit()

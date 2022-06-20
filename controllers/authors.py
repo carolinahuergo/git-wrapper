@@ -6,7 +6,7 @@ from services.authors import AuthorsService
 
 router = APIRouter(
     prefix="/authors",
-    tags=["authors"],
+    tags=["Authors"],
 )
 
 @router.get("/", status_code = status.HTTP_200_OK, response_model=List[Author])

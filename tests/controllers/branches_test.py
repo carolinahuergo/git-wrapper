@@ -2,6 +2,7 @@ from fastapi.testclient import TestClient
 from app import app
 from schemas.branch import Branch, Scope
 
+
 client = TestClient(app)
 
 mock_branch = Branch(name='test_branch')

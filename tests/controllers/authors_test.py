@@ -2,6 +2,7 @@ from fastapi.testclient import TestClient
 from app import app
 from schemas.author import Author
 
+
 client = TestClient(app)
 
 mock_author = Author(

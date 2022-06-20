@@ -1,5 +1,3 @@
-from enum import Enum
-from pydantic import BaseModel
 from sqlalchemy import Column, Integer, String
 from sqlalchemy import Enum as SQLEnum
 from databases.sqlite import Base

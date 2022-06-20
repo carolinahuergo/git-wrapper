@@ -1,6 +1,5 @@
 from schemas.author import Author
 from services.authors import AuthorsService
-from tests.mocks import MockObject
 
 
 def test_get_all_authors(mocker):
@@ -9,11 +8,7 @@ def test_get_all_authors(mocker):
     AuthorsService().get_all_authors()
     mocked_parse_authors.assert_called()
 
-def test_get_all_authors_no_author(mocker, git_mock):
-    # TODO: mocking class attribute
-    mocker.patch('git.Repo', return_value=MockObject('test'))
-    authors = AuthorsService().get_all_authors()
-    assert authors == []
+# i'd continue testing, for example, what happenens when there is no author.
 
 def test__parse_authors(mocker):
     authors_to_parse = '11\tcarolinahuergo <carolinahhuergo@icloud.com>'

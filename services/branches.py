@@ -1,6 +1,7 @@
 from os import environ
 from git import Repo
 from schemas.branch import Branch, Scope
+import git
 
 class BranchesService:
 
