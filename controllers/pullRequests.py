@@ -1,6 +1,5 @@
 from fastapi import APIRouter, Depends, status
-from sqlalchemy import Integer
-from models.pullRequest import PullRequestInput, PullRequestResponse
+from schemas.pullRequest import PullRequestInput, PullRequestResponse
 from services.pullRequests import PullRequestsService
 
 

@@ -1,8 +1,9 @@
 from fastapi import Depends
 from daos.pullRequest import PullRequestDAO
-from models.pullRequest import PullRequest, PullRequestInput, PullRequestStatus
+from models.pullRequest import PullRequest
 from github import Github
 from os import environ
+from schemas.pullRequest import PullRequestInput, PullRequestStatus
 from services.branches import BranchesService
 
 class PullRequestsService:
